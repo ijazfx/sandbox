@@ -1,0 +1,13 @@
+project Tutorial is
+
+   for Source_Dirs use ("src");
+
+   package Ide is
+      for Vcs_Kind use "Git";
+   end Ide;
+
+   for Main use ("helloworld.adb", "trivial.adb");
+   for Object_Dir use "obj/";
+
+end Tutorial;
+
