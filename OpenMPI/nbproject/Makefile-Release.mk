@@ -14,10 +14,10 @@ GREP=grep
 NM=nm
 CCADMIN=CCadmin
 RANLIB=ranlib
-CC=openmpicc
-CCC=openmpic++
-CXX=openmpic++
-FC=openmpif90
+CC=gcc
+CCC=g++
+CXX=g++
+FC=gfortran
 AS=as
 
 # Macros

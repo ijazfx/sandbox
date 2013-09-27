@@ -5,3 +5,13 @@ cmake_install.cmake
 install_manifest.txt
 *.o
 obj
+/Java7/Java7/nbproject/private/
+/Java7/Java7/build/
+/OpenMP/HelloWorld/dist/
+/OpenMP/HelloWorld/build/
+/OpenMPI/build/
+/OpenMPI/dist/
+/CPP_Revision/dist/
+/CPP_Revision/build/
+/C_Revision/build/
+/C_Revision/dist/
