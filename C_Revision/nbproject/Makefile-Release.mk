@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/f_linked_list.o \
 	${OBJECTDIR}/f_queue.o \
 	${OBJECTDIR}/f_stack.o \
 	${OBJECTDIR}/main.o
@@ -63,6 +64,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/c_revision: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/c_revision ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/f_linked_list.o: f_linked_list.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/f_linked_list.o f_linked_list.c
 
 ${OBJECTDIR}/f_queue.o: f_queue.c 
 	${MKDIR} -p ${OBJECTDIR}

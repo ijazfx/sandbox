@@ -8,12 +8,21 @@
 #include <stdio.h>
 #include "f_stack.h"
 #include "f_queue.h"
+#include "f_linked_list.h"
 
 int main(int argc, char** argv) {
     f_stack_t *s = create_stack(8);
     f_queue_t *q = create_queue(8);
-    int i;
-    for (i = 1; i <= 10; i++) {
+    f_node_t *first = NULL;
+    f_node_t *current = NULL;
+    int i, value;
+
+    for (i = 0; i < 10; i++) {
+        if (first == NULL) {
+            first = create_linked_list(i);
+        } else {
+            add_node(first, i);
+        }
         if (push(s, i)) {
             printf("%d pushed to stack\n", i);
         } else {
@@ -38,6 +47,15 @@ int main(int argc, char** argv) {
             printf("queue is empty!\n");
         }
     }
+    remove_node(first, 3, &value);
+    printf("%d is removed from the list\n", value);
+    current = first;
+    while (current != NULL) {
+        printf("list item value is %d\n", current->value);
+        current = current->next;
+    }
+    
     delete_stack(s);
     delete_queue(q);
+    delete_linked_list(first);
 }
